@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/RecoveryPasswordSendEmail.scss";
 
 export const RecoveryPasswordSendEmail = () => {
   return (
