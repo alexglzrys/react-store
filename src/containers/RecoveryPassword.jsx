@@ -9,7 +9,7 @@ export const RecoveryPassword = () => {
         <h1 className="title">Create a new password</h1>
         <p className="subtitle">Enter a new passwrd for yue account</p>
         <form action="/" className="form">
-          <label for="password" className="label">
+          <label htmlFor="password" className="label">
             Password
           </label>
           <input
@@ -18,7 +18,7 @@ export const RecoveryPassword = () => {
             placeholder="*********"
             className="input input-password"
           />
-          <label for="new-password" className="label">
+          <label htmlFor="new-password" className="label">
             Password
           </label>
           <input
