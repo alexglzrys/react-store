@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Header.scss";
+import { Menu } from "./Menu";
 
 export const Header = () => {
   return (
@@ -7,26 +8,7 @@ export const Header = () => {
       <img src="./icons/icon_menu.svg" alt="menu" className="menu" />
       <div className="navbar-left">
         <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
-        <ul>
-          <li>
-            <a href="/">All</a>
-          </li>
-          <li>
-            <a href="/">Clothes</a>
-          </li>
-          <li>
-            <a href="/">Electronics</a>
-          </li>
-          <li>
-            <a href="/">Furnitures</a>
-          </li>
-          <li>
-            <a href="/">Toys</a>
-          </li>
-          <li>
-            <a href="/">Others</a>
-          </li>
-        </ul>
+        <Menu />
       </div>
       <div className="navbar-right">
         <ul>

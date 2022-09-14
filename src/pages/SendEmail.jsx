@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/RecoveryPasswordSendEmail.scss";
+import "../styles/SendEmail.scss";
 
-export const RecoveryPasswordSendEmail = () => {
+export const SendEmail = () => {
   return (
-    <div className="login">
-      <div className="form-container">
+    <div className="SendEmail">
+      <div className="SendEmail-container">
         <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
         <h1 className="title">Email has been sent!</h1>
         <p className="subtitle">

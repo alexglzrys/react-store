@@ -1,0 +1,24 @@
+.Menu {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin-left: 12px;
+
+    a {
+        text-decoration: none;
+        color: var(--very-light-pink);
+        border: 1px solid var(--white);
+        padding: 8px;
+        border-radius: 8px;
+
+        &:hover {
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+        }
+    }
+
+}
