@@ -1,11 +1,12 @@
 import React from "react";
 import "../styles/PasswordRecovery.scss";
+import Logotipo from "../assets/logos/logo_yard_sale.svg";
 
 export const PasswordRecovery = () => {
   return (
     <div className="PasswordRecovery">
       <div className="PasswordRecovery-container">
-        <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
+        <img src={Logotipo} alt="logo" className="logo" />
         <h1 className="title">Password Recovery</h1>
         <p className="subtitle">Enter a email for password recovery</p>
         <form action="/" className="form">

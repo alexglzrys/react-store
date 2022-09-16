@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Order.scss";
+import IconClose from "../assets/icons/icon_close.png";
 
 export const Order = () => {
   return (
@@ -13,7 +14,7 @@ export const Order = () => {
         </figure>
         <p>Bike</p>
         <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close" />
+        <img src={IconClose} alt="close" />
       </div>
       <div className="shopping-cart">
         <figure>
@@ -24,7 +25,7 @@ export const Order = () => {
         </figure>
         <p>Bike</p>
         <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close" />
+        <img src={IconClose} alt="close" />
       </div>
       <div className="shopping-cart">
         <figure>
@@ -35,7 +36,7 @@ export const Order = () => {
         </figure>
         <p>Bike</p>
         <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close" />
+        <img src={IconClose} alt="close" />
       </div>
       <div className="Order-total">
         <p>
