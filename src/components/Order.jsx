@@ -7,7 +7,7 @@ import { OrderItemSidebar } from "./OrderItemSidebar";
 export const Order = () => {
   // usar el valor que comparte el contexto AppContext
   const { state, getTotal } = useContext(AppContext);
-  console.log(getTotal);
+
   return (
     <div className="Order">
       {/* Mostrar los productos agregados al carrito */}

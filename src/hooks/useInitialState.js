@@ -15,6 +15,14 @@ export const useInitialState = () => {
     });
   };
 
+  // Eliminar un producto del carrito de la compra
+  const deleteFromCart = (payload) => {
+    setState({
+      ...state,
+      cart: state.cart.filter((product) => product.id !== payload),
+    });
+  };
+
   // Obtener el total de la compra
   const getTotal = state.cart.reduce(
     (acumulador, product) => acumulador + Number(product.price),
@@ -25,6 +33,7 @@ export const useInitialState = () => {
   return {
     state,
     addToCart,
+    deleteFromCart,
     getTotal,
   };
 };
