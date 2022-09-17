@@ -1,27 +1,19 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ProductItem } from "../components/ProductItem";
+import { useGetProducts } from "../hooks/useGetProducts";
 import "../styles/ProductList.scss";
 
 const API = "https://api.escuelajs.co/api/v1/products";
 
 export const ProductList = () => {
-  // Estado para almacenar los productos
-  const [products, setProducts] = useState([]);
-  // Comunicación con API (efecto secundario)
-  useEffect(() => {
-    const getProducts = async () => {
-      const response = await axios.get(API);
-      setProducts(response.data);
-    };
-    getProducts();
-  }, []);
+  // Invocar al custom hook encargado de solicitar el listado de productos desde un API
+  const products = useGetProducts(API);
 
   return (
     <section className="ProductList">
       {/* <div className="cards-container"> */}
       {products.map((product) => (
-        <ProductItem key={product.id} />
+        <ProductItem key={product.id} product={product} />
       ))}
       {/* </div> */}
     </section>
