@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+## Atomic Design aplicado a React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Átomos
 
-## Available Scripts
+Los elementos básicos de los que se compone una página, por si solos no son de gran utilidad.
 
-In the project directory, you can run:
+- Iconos
+- Botones
+- Avatar
+- Textos
+- Imagen
+- Label
 
-### `npm start`
+### Moléculas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Es un conjunto de **átomos** agrupados entre sí para formar un componente con una determinada funcionalidad básica
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Barra de compartir recursos en redes sociales
+- El header de un card
+- La info del autor de un determinado artículo
+- Un botón con su correspindiente icono
+- Una entrada de formulario y su respectivo label o icono flotante
 
-### `npm test`
+### Organismos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Son componentes que se componen de un conjunto de **moléculas**. Es decir componentes más complejos que cumplen una determinada función en la UI.
 
-### `npm run build`
+- Cards
+- Navbar
+- Sidebars
+- Formularios
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Templates
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Se prodría decir que es un conjunto de **organismos** agrupados entre si para definir ciertas secciones de la UI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Grid de cards
+- Listado de elementos
+- Layout
 
-### `npm run eject`
+### Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Las páginas que serán gestionadas por un Router.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Alias en Webpack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[Los alias](https://webpack.js.org/configuration/resolve/) es una caracteristica de **Webpack** que nos permiten definir rutas especificas de nuestro proyecto con un nombre más amigable, mismo que puede ser llamado en el momento de la importación de recursos
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+const path = require('path');
 
-## Learn More
+module.exports = {
+  //...
+  resolve: {
+    alias: {
+      Utilities: path.resolve(__dirname, 'src/utilities/'),
+      Templates: path.resolve(__dirname, 'src/templates/'),
+    },
+  },
+};
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+import Utility from 'Utilities/utility';
+```
