@@ -15,9 +15,16 @@ export const useInitialState = () => {
     });
   };
 
+  // Obtener el total de la compra
+  const getTotal = state.cart.reduce(
+    (acumulador, product) => acumulador + Number(product.price),
+    0
+  );
+
   // Exponer la interfaz pública del custom hook
   return {
     state,
     addToCart,
+    getTotal,
   };
 };
